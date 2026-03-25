@@ -1,6 +1,6 @@
 "use client"; // <-- Add this to line 1!
 
-import { Bot, Building, Camera, Map, MapPinned, Send, ShieldCheck, Zap, Info} from 'lucide-react';
+import { Bot, Building, Camera, Map, MapPinned, Send, ShieldCheck, Zap, Info, User, MessageSquare} from 'lucide-react';
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -21,10 +21,15 @@ export default function Home() {
     <main className="min-h-screen bg-slate-50 text-slate-900 selection:bg-teal-500 selection:text-white font-sans antialiased overflow-hidden">
       
       {/* Navigation - Pure Typography */}
-      <nav className="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+       <nav className="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-3xl font-extrabold tracking-tighter text-teal-900 hover:scale-105 hover:rotate-1 transition-transform cursor-pointer">
+          <Link href="/" className="text-3xl font-extrabold tracking-tighter text-teal-900 hover:scale-105 hover:rotate-1 transition-transform cursor-pointer">
             Free<span className="text-emerald-500">Walk</span>
+          </Link>
+          <div className="flex items-center gap-6">
+            <Link href="/mission" className="text-sm font-bold text-slate-600 hover:text-teal-700 transition-colors hidden sm:block">
+              Our Mission
+            </Link>
           </div>
           <a 
             href="https://appdistribution.firebase.dev/i/e80e0a15fd2cf34e" 
@@ -261,6 +266,36 @@ export default function Home() {
                     <p className="text-sm text-teal-200 mt-1">If you run a local citizen group, contact us for free access to the Ward 118 Admin Dashboard.</p>
                 </div>
             </div>
+          </div>
+        </div>
+      </section>
+      {/* NEW: About The Builder Section (Added directly to the Landing Page!) */}
+      <section className="bg-white py-24 border-t border-slate-200">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div className="bg-slate-50 rounded-[3rem] p-10 md:p-16 border border-slate-200 text-center relative overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-400 via-teal-500 to-emerald-500"></div>
+            
+            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm border border-slate-200">
+              <User className="text-teal-700" size={32} />
+            </div>
+            
+            <h2 className="text-3xl font-extrabold mb-6 text-slate-800">Who is building this?</h2>
+            
+            <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-6">
+              Honestly? I am just an average guy and a hobby coder. I don't work at a massive tech giant, I just do a lot of "vibe coding" on the weekends.
+            </p>
+            
+            <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-10">
+              I definitely don't have all the answers, and this is first time I am building an app. This app is a massive work in progress. I am completely open to suggestions, feedback, and help from anyone.
+            </p>
+            
+            <a 
+              href="mailto:masterthesisrcse@gmail.com" 
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white border-2 border-slate-200 hover:border-teal-500 text-slate-700 hover:text-teal-700 font-bold rounded-2xl transition-all shadow-sm hover:shadow-md"
+            >
+              <MessageSquare size={20} />
+              Drop me a suggestion
+            </a>
           </div>
         </div>
       </section>
