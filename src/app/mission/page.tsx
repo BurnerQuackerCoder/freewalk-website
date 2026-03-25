@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { Hammer, Database, Route, ArrowLeft, Lightbulb, Building } from 'lucide-react';
 
+
 export default function Mission() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 selection:bg-teal-500 selection:text-white font-sans antialiased">
-      
+
       {/* Minimal Navigation */}
       <nav className="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 
 // Load the Nunito font
 const nunito = Nunito({ subsets: ["latin"] });
@@ -18,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* Apply the friendly font globally to the entire body */}
-      <body className={nunito.className}>{children}</body>
+      <body className={nunito.className}>{children}
+        <Analytics />
+      </body>
     </html>
   );
 }
