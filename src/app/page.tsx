@@ -1,8 +1,10 @@
 "use client"; // <-- Add this to line 1!
 
-import { useState, useEffect } from "react";
-import { Bot, ShieldCheck, MapPinned, Zap, Building, Camera, Map, Send } from 'lucide-react';
+import { Bot, Building, Camera, Map, MapPinned, Send, ShieldCheck, Zap, Info} from 'lucide-react';
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+
 export default function Home() {
   // --- ADD THIS CAROUSEL STATE ---
   const [activeStep, setActiveStep] = useState(0);
@@ -73,6 +75,20 @@ export default function Home() {
           Download Android Beta
           <span className="ml-3 group-hover:translate-x-2 transition-transform text-2xl"></span>
         </a>
+        {/* --- NEW: BETA TRANSPARENCY NOTE --- */}
+        <div className="max-w-xl w-full bg-slate-100 border border-slate-200 rounded-2xl p-5 text-left flex gap-4 items-start shadow-sm mt-8">
+          <Info className="text-teal-600 flex-shrink-0 mt-0.5" size={24} />
+          <div>
+            <h4 className="font-bold text-slate-800 mb-1">Beta Testing Notice</h4>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              V1 is currently an evidence-gathering engine. The live heatmap is restricted to Admin/RWA view to protect privacy. Expect occasional bugs, and note that reports are capped at 10/day to prevent API spam.{" "}
+              <Link href="/mission" className="text-teal-600 font-bold hover:underline ml-1">
+                Read our full mission here.
+              </Link>
+            </p>
+          </div>
+        </div>
+        {/* ---------------------------------- */}
       </section>
 
       {/* NEW: App Showcase & Step-by-Step Section */}
