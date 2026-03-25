@@ -81,7 +81,7 @@ export default function Home() {
           <div>
             <h4 className="font-bold text-slate-800 mb-1">Beta Testing Notice</h4>
             <p className="text-sm text-slate-600 leading-relaxed">
-              V1 is currently an evidence-gathering engine. The live heatmap is restricted to Admin/RWA view to protect privacy. Expect occasional bugs, and note that reports are capped at 10/day to prevent API spam.{" "}
+              V1 is currently an evidence-gathering engine. As all the services are on free tier, initial OTP takes time and other delays also expected. The live heatmap is restricted to Admin view. Expect occasional bugs, and note that reports are capped at 10/day to prevent API spam.{" "}
               <Link href="/mission" className="text-teal-600 font-bold hover:underline ml-1">
                 Read our full mission here.
               </Link>
